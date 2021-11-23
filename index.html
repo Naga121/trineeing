@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function sub() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var gender = document.getElementById('gender').value;
+            var ds=document.getElementById("start")
+            var de=document.getElementById("end")
+            var pattren=new RegExp("^[a-bA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+            var str="";
+            if (name.trim().length == 0)
+               str="name not be null \n";
+            if (email.trim().length == 0)
+              str=str+"email not pattren \n";
+            else if(!pattren.test(email))
+              str=str+"email invalide \n";
+            var gen=false;
+            for(var i=0;i<2;i++){
+                if(document.getElementsByName('gender')[i].checked)
+                gen=true;
+            }    
+            if(gen==false)
+            str=str+"select gender";
+            document.getElementById("data").innerHTML=str;
+            if(str==''){
+                alert(name+","+email+","+gender);
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <pre>
+        <form action="">
+            Name: <input type="text" name="Name" id="name">
+            Email: <input type="text" name="Name" id="email">
+            Gender: <input type="radio" name="gender" id="gender" value="male">Male <input type="radio" id="gender" name="gender" value="female">Female
+            DayStard: <input type="datetime-local" name="start" id="">
+            DayEnd: <input type="datetime-local" name="start" id="">
+            Transport Require : <input type="checkbox" name="tc" id="tc" value="true">
+            <input type="submit" value="Submite" onclick="return sub();">
+        </form>
+        
+    </pre>
+    <div>
+        <h1>User Data</h1>
+        <pre id="data">
+            
+        </pre>
+    </div>
+</body>
+
+</html>
