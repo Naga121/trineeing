@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <title>Document</title>
+
+    <script>
+      $(function () {
+        //    $("#btn").click(function(){
+        //        let e=$("#id").val();
+        //        alert(e)
+        //    });
+        $("#btn").click(function () {
+          var e = $("#id").val();
+          if (e.length != 0) {
+            alert(e);
+          } else {
+            $("#id").focus();
+            $("#id").css("background-color", "red");
+          }
+        });
+        // $("#date").datepicker({
+        //     maxDate:0,
+        //     minDate:-3
+        // });
+        $("#date").mouseover(function () {
+          $(this).datepicker({
+            maxDate: 0,
+            minDate: -3,
+          });
+        });
+        $("#date").change(function () {
+          console.log($(this).val());
+        });
+
+        var names = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme",
+        ];
+        $("#search").keyup(function () {
+          let v = $("#search").val();
+          let out = names.filter((x) => {
+            if (x.startsWith(v)) {
+              return x;
+            }
+          });
+          $("#search").autocomplete({
+            source: out,
+          });
+        });
+      });
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <form action="">
+        <pre>
+                <input type="text" name="" id="id">
+                <input type="button" name="" value="submit" id="btn">
+                <input type="text" name="" id="date">
+                <input type="text" name="" id="search">
+            </pre>
+      </form>
+    </div>
+  </body>
+</html>

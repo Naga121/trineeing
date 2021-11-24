@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <script>
+    //    $(document).ready(function(){
+    //        $("h1").click(function(){
+    //            $(this).hide();
+    //        });
+    //     //    $("p").click(function(){
+    //     //         $(this).hide();
+    //     //    });
+    //        $("#p1").click(function(){
+    //            $(this).hide()
+    //        });
+    //    });
+
+    $(function(){
+        $("#p1").click(function(){
+            $(this).hide();
+        });
+        $(".text").click(function(){
+            $(this).hide();
+        });
+        $("p.text").click(function(){
+            $(this).hide();
+        });
+        $("#btn").mouseover(function(){
+            alert(`By`);
+        });
+        $("tr").hover(
+            function(){
+                $(this).css("color","red")
+            },
+            function(){
+                $(this).css("background","white")
+            }
+        );
+        $("tr").hover(
+            function(){
+                $(this).addClass("r1");
+            },function(){
+                $(this).removeClass("r1");
+            },
+            function(){
+                
+            }
+        );
+    });
+    </script>
+    <style>
+        .r1{
+            color: white;
+            font-size: large;
+            font-weight: bold;
+            background-color: turquoise;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hello Naga 1</h1>
+        <h1>Hello Naga2 </h1>
+        <h1>Hello Naga3</h1>
+        <h1>Hello Naga4</h1>
+        <h1>Hello Naga5</h1>
+        <h1>Hello Naga6</h1>
+    </div>
+
+    <div>
+        <p id="p1">Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p class="text">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+
+    <h1 class="text">Lorem, ipsum dolor.</h1>
+    <h1>Lorem, ipsum dolor.</h1>
+    <h1 class="text">Lorem, ipsum dolor.</h1>
+    <h1 >Lorem, ipsum dolor.</h1>
+
+    <button id="btn">Hi</button>
+
+
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>sal</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Naga</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Raju</td>
+            <td>3000</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
